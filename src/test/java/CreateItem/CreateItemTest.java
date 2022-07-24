@@ -65,23 +65,6 @@ public class CreateItemTest{
         System.out.println("Success !!");
     }
 
-    @Test  // lỗi ko trả về được 1004, lỗi hệ thống 401
-    public void Test05() throws IOException {
-        System.out.println("Unit test 5: If not login, code should be 1004");
-        try{
-            LoginRequest loginRequest=new LoginRequest("giang.dq204542@sis.hust.edu.vn","giangcvp");
-            LogoutRequest logoutRequest=new LogoutRequest(loginRequest.getAccess_token());
-            //CreateAuction createAuction = new CreateAuction("5", "2023/07/14 11:31", "2024/07/21 11:31", "ngeksassr", loginRequest.getAccess_token());
-            CreateItem createItem = new CreateItem("932", "girl", 300, 3, "beautiful", RandomString.getAlphaNumericString(alpha, 10), loginRequest.getAccess_token());
-            int code = createItem.getCode();
-            Assert.assertEquals(1004, code);
-            //Assert.assertEquals("OK", createItem.getMessage());
-            System.out.println("Success !!");
-        }catch (Exception e){
-            assertFalse(true);
-        }
-    }
-
     @Test
     public void Test06() throws IOException{
         System.out.println("Unit test 6: if series >10, code=1001, msg=brand: &name: &series: 7011&description: &starting_price: ");

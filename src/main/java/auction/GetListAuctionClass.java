@@ -21,9 +21,9 @@ class Auction1{
     public String end_date;
     public String statusId;
     public String status;
-    public Category category;
+    public Category2 category;
 }
-class Category{
+class Category2{
     public String name;
     public String image;
     public String type;

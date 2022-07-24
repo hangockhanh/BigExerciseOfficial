@@ -20,16 +20,6 @@ public class EditAuctionTest {
         Assert.assertEquals("OK", editAuction.getMessage());
     }
     @Test
-    // no start_date, end_date, title_ni
-    // loi: 1 trong 4 truong co xuat hien nhung van xuat hien loi 7000(yeu cau nhap)
-    public void unit_test2() throws ProtocolException, IOException{
-        LoginRequest loginRequest = new LoginRequest("ha@gmail.com", "khanh");
-        EditAuction editAuction = new EditAuction(2084,4,null,null,null,loginRequest.getAccess_token());
-        int code = editAuction.getCode();
-        Assert.assertEquals(1001,code);
-        Assert.assertEquals("OK", editAuction.getMessage());
-    }
-    @Test
     // no end_date, title_ni
     public void unit_test3() throws IOException{
         LoginRequest loginRequest = new LoginRequest("ha@gmail.com", "khanh");

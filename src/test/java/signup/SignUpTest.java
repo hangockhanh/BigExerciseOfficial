@@ -4,11 +4,12 @@ import java.net.ProtocolException;
 import java.io.IOException;
 import static org.junit.Assert.*;
 import org.junit.Test;
+import lib.RandomString;
 
 public class SignUpTest {
     @Test
     public void true_account() throws ProtocolException, IOException{
-        SignUpRequest signuprequest = new SignUpRequest("viet23@gmail.com", "viet...", "viet...", "VP", "Việt", "0532446712", "");
+        SignUpRequest signuprequest = new SignUpRequest(RandomString.getAlphaNumericString("abcdefghijklmnopqrstuvxyz", 5) + "@gmail.com", "viet...", "viet...", "VP", "Việt", "0532446712", "");
         int code = signuprequest.getCode();
         assertEquals("code should be 1000", 1000, code);
     }

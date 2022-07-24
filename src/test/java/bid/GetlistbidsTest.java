@@ -25,14 +25,14 @@ public class GetlistbidsTest {
         assertEquals("OK",getlistbidsrequest.getMessage());
         System.out.println("Success!!!");
     }
-    /*@Test // vẫn chạy được khi index và count có giá trị âm
+    @Test // vẫn chạy được khi index và count có giá trị âm
     public void test03() throws ProtocolException, IOException{
-        LoginRequest loginrequest = new LoginRequest("giang.dq204542@sis.hust.edu.vn", "giangcvp2388");
+        LoginRequest loginrequest = new LoginRequest("giang.dq204542@sis.hust.edu.vn", "giangcvp");
         String access_token = loginrequest.getAccess_token();
         System.out.println("code shouldn't be 1000 and message shouldn't be OK if index or count is negative.");
         GetlistbidsRequest getlistbidsrequest = new GetlistbidsRequest(-5,-3,access_token,123);
         assertNotEquals(1000,getlistbidsrequest.getCode()) ;
         assertNotEquals("OK",getlistbidsrequest.getMessage());
         System.out.println("Success!!!");
-    }*/
+    }
 }

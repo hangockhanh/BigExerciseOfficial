@@ -14,7 +14,7 @@ public class GetListAuctionTest{
     public void unit_test0() throws ProtocolException, IOException{
         LoginRequest loginRequest = new LoginRequest("ha@gmail.com", "khanh");
         GetListAuction getlist = new GetListAuction(4, "", "1", "",2,2, loginRequest.getAccess_token());
-        assertEquals("code should be 1000", 1000, getlist.getCode());
+        assertNotEquals("code should not be 1000", 1000, getlist.getCode());
     }
     @Test
     // type only
@@ -22,7 +22,7 @@ public class GetListAuctionTest{
     public void unit_test1()throws ProtocolException, IOException{
         LoginRequest loginRequest = new LoginRequest("ha@gmail.com", "khanh");
         GetListAuction getlist = new GetListAuction(1, "", "6", "", 2, 2, null);
-        assertEquals("code should be 1000",1000,getlist.getCode());
+        assertNotEquals("code should not be 1000",1000,getlist.getCode());
     }
     @Test
     // no params
@@ -60,7 +60,7 @@ public class GetListAuctionTest{
     public void unit_test6()throws ProtocolException, IOException{
         LoginRequest loginRequest = new LoginRequest("ha@gmail.com", "khanh");
         GetListAuction getlist = new GetListAuction(8, "", "", "", 2, 2, null);
-        assertEquals("code should be 1000",1000,getlist.getCode());
+        assertNotEquals("code should not be 1000",1000,getlist.getCode());
     }
     @Test
     // index < 0
@@ -68,15 +68,15 @@ public class GetListAuctionTest{
     public void unit_test7()throws ProtocolException, IOException{
         LoginRequest loginRequest = new LoginRequest("ha@gmail.com", "khanh");
         GetListAuction getlist = new GetListAuction(1, "", "", "", -2, 2, null);
-        assertEquals("code should be 1000",1000,getlist.getCode());
+        assertNotEquals("code should not be 1000",1000,getlist.getCode());
     }
     @Test
     // count < 0 
     //loi: van tra ve ket qua
     public void unit_test8()throws ProtocolException, IOException{
         LoginRequest loginRequest = new LoginRequest("ha@gmail.com", "khanh");
-        GetListAuction getlist = new GetListAuction(1, "", "", "", -2, -2, null);
-        assertEquals("code should be 1000",1000,getlist.getCode());
+        GetListAuction getlist = new GetListAuction(1, "", "", "", 2, -2, null);
+        assertNotEquals("code should not be 1000",1000,getlist.getCode());
     }
 }
   
